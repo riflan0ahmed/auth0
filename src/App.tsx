@@ -20,16 +20,16 @@ function App() {
   return (
     <>
       <Router>
-        {!isAuthenticated === true ? (
-          <Switch>
-            <Route path="/login" component={Login} />
-          </Switch>
-        ) : (
-          <Switch>
-            <Route path="/profile" component={Profile} />
-            <Route path="/" component={Home} />
-          </Switch>
-        )}
+        {/* {!isAuthenticated === true ? ( */}
+        <Switch>
+          <Route path="/login" component={Login} />
+          {/* </Switch> */}
+          {/* ) : ( */}
+          {/* <Switch> */}
+          <Route path="/profile" component={Profile} />
+          <Route path="/" component={Home} />
+        </Switch>
+        {/* )} */}
       </Router>
     </>
   );
