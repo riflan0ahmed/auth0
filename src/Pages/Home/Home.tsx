@@ -1,10 +1,10 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-interface User {
-  name: string;
-  picture: string;
-  email: string;
-}
+// interface User {
+//   name: string;
+//   picture: string;
+//   email: string;
+// }
 
 const Home = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
