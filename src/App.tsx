@@ -2,14 +2,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Profile from "./Pages/Profile/Profile";
 import Login from "./Pages/Login/Login";
-// import { useSelector } from "react-redux";
-// import { selectAuth } from "./Redux/Auth/authSlice";
-// import { useEffect } from "react";
-// import { useHistory } from "react-router-dom";
+import AppBar from "./Shared/AppBar/AppBar";
+import { useSelector } from "react-redux";
+import { selectAuth } from "./Redux/Auth/authSlice";
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 function App() {
-  // const isAuthenticated = useSelector(selectAuth);
-  // let history = useHistory();
+  const isAuthenticated = useSelector(selectAuth) as boolean;
+  let history = useHistory();
 
   // useEffect(() => {
   //   if (!isAuthenticated) {
@@ -18,7 +19,8 @@ function App() {
   // }, [isAuthenticated, history]);
 
   return (
-    <>
+    <div className="flex flex-col mx-auto w-11/12 max-w-screen-lg">
+      <AppBar />
       <Router>
         {/* {!isAuthenticated === true ? ( */}
         <Switch>
@@ -31,7 +33,7 @@ function App() {
         </Switch>
         {/* )} */}
       </Router>
-    </>
+    </div>
   );
 }
 

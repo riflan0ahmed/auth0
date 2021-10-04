@@ -5,7 +5,7 @@ const Home = () => {
   const { logout, user, isAuthenticated } = useAuth0();
   const history = useHistory();
   return (
-    <>
+    <div className="">
       {isAuthenticated && (
         <div>
           <img src={user?.picture} alt={user?.name} />
@@ -22,7 +22,7 @@ const Home = () => {
       >
         Log Out
       </button>
-    </>
+    </div>
   );
 };
 
