@@ -1,7 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useHistory } from "react-router";
 
 const Home = () => {
   const { logout, user, isAuthenticated } = useAuth0();
+  const history = useHistory();
   return (
     <>
       {isAuthenticated && (
@@ -12,7 +14,12 @@ const Home = () => {
         </div>
       )}
 
-      <button onClick={() => logout({ returnTo: window.location.origin })}>
+      <button
+        onClick={() => {
+          logout({ returnTo: window.location.origin });
+          history.push("/login");
+        }}
+      >
         Log Out
       </button>
     </>
