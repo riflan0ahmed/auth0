@@ -7,9 +7,6 @@ import { store } from "./store";
 import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-console.log(process.env.REACT_APP_DOMAIN);
-console.log(process.env.REACT_APP_CLIENT_ID);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
